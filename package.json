@@ -1,0 +1,24 @@
+{
+  "name": "cs290finalproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaolinLiu/cs290finalproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaolinLiu/cs290finalproject/issues"
+  },
+  "homepage": "https://github.com/HaolinLiu/cs290finalproject#readme"
+}
