@@ -1,0 +1,117 @@
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+  margin: 0;
+  background-image: url('/images/food.jpg');
+  background-repeat:repeat-y;
+  background-size:100% ;
+  text-align:center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.title-container{
+  margin:0 auto;
+  height: 50%;
+  width: 50%;
+  position: relative;
+  top: 40%;
+}
+
+
+
+img.title {
+  margin:0 auto;
+  top: 80%;
+  height: 100%;
+  width: 100%;
+
+}
+
+.navbar {
+  font-size: 20px;
+  line-height: 22px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.navlist {
+  margin: 0 0 0 20px;
+  padding: 0;
+  margin-left: auto;
+margin-right: auto;
+TEXT-ALIGN: center;
+}
+
+.navitem {
+  display: inline-block;
+  position: center;
+}
+
+a {
+  color: darkorange;
+}
+
+a:hover,
+a:focus {
+  color: darkred;
+}
+
+a:focus {
+  outline: none;
+}
+
+.navlink a {
+  padding: 8px 10px;
+  display: inline-block;
+}
+
+.content-container{
+  text-align:center;
+  width:50%;
+  margin-top: 10%;
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+.content{
+  color:darkred;
+
+}
+
+#plate-button{
+  background-color: transparent;
+  border: none;
+}
+
+.plate{
+  
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+}
+
+.name-container{
+  display: hidden;
+}
+
+.add-words{
+  margin-top: 40%;
+  color: darkred;
+}
+
+.name-container{
+  position: relative;
+  top: -300px;
+}
+#name-show{
+  color: darkred;
+  font-size: 24px;
+  line-height: 22px;
+}
