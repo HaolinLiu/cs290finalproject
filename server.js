@@ -1,51 +1,104 @@
-// Aikebaier Aierken
+/*
+ * Write your routing code in this file.  Make sure to add your name and
+ * @oregonstate.edu email address below.
+ *
+ * Name: Haolin Liu
+ * Email: liuhaol@oregonstate.edu
+ */
 
+var path = require('path');
+var express = require('express');
 
-var express = require("express");
-var HTTP_PORT = process.env.PORT || 8080;
+var resturants = require('./resturants');
+
 var app = express();
-var hbs = require("hbs");
-var path = require("path");
-var bodyParser = require('body-parser');
+var port = process.env.PORT || 3003;
 
-var data_service = require("./data-service.js");
+var exphbs = require('express-handlebars');
+app.engine('handlebars',exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+//var bodyParser = require('body-parser');
+//var MongoClient = require('mongodb').MongoClient;
+
+
+
+app.get('/index.html', function (req, res, next) {
+  res.status(200).render('index');
+});
+
+app.get('/generator.html', function (req, res, next) {
+  res.status(200).render('generator', {
+    resturants: resturants
+  });
+});
+
+app.get('/add.html', function (req, res, next) {
+  res.status(200).render('add', {
+  });
+});
+
+/*
+app.post('/add/addname', function (req, res, next) {
+  if (req.resturants && req.resturants.name) {
+    var name = {
+      name: req.resturants.name
+    };
+    var resturants = mongoDB.collection('resturants');
+    resturants.updateOne(
+      { $push: name },
+      function (err, result) {
+        if (err) {
+          res.status(500).send("Error inserting name in DB.")
+        } else {
+          console.log("== mongo insert result:", result);
+          if (result.matchedCount > 0) {
+            res.status(200).end();
+          } else {
+            next();
+          }
+        }
+      }
+    );
+  } else {
+    res.status(400).send("Request needs a JSON body with caption and photoURL.")
+  }
+});
+*/
+
+
+app.get('/qnas.html', function (req, res, next) {
+  res.status(200).render('qnas');
+});
+
+app.get('/about.html', function (req, res, next) {
+  res.status(200).render('about');
+});
+
+app.get('/', function (req, res, next) {
+  res.status(200).render('index');
+});
+
+app.get('/404.html', function (req, res, next) {
+  res.status(404).render('404');
+});
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('view engine','hbs');
-app.engine('hbs',hbs.__express);
-
-app.get("/", function(req,res){
-    data_service.initialize(req.params.empNum).then((data) => {
-        res.render('index', {memo: data});
-    }).catch((err) => {
-        res.status(500).send("Unable to read data");
-    });
+app.use('*', function (req, res) {
+  res.status(404).render('404');
 });
 
-app.get("/index", function(req,res){
-    data_service.initialize().then((data) => {
-        res.render('index', {memo: data});
-    }).catch((err) => {
-        res.status(500).send("Unable to read data");
-    });
+
+app.listen(port, function () {
+  console.log("== Server is listening on port", port);
 });
-app.get("/delete/:id", function (req, res){
-    data_service.deleteNote(req.params.id).then((data) => {
-        res.redirect("/");
-    }).catch((err) => {
-        res.status(500).send("Unable to Remove Employee / Employee not found");
-    });
-});
-app.post("/add", function(req, res) {
-    if (req.body) {
-        data_service.addNote(req.body).then((data) => {
-        res.redirect("/");
-    }).catch((err) => {
-        console.log(err);
-    });
-}
-});
-app.listen(HTTP_PORT);
-console.log("Express http server listening on " + HTTP_PORT);
+
+
+//mongo --host classmongo.engr.oregonstate.edu --username cs290_liuhaol cs290_liuhaol --password
+//db.getCollectionName()
+//db.name.insertONe({
+
+//})
+//db.namp.find( ).pretty()
+//db.name.updateOne()
