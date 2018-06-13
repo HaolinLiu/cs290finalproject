@@ -1,6 +1,7 @@
 # Assignment 5
 **Assignment and Code Blog entry due at 11:59pm on Monday, 6/4/2018**
 
+<<<<<<< HEAD
 **Demo due by 5:00pm on Friday, 6/15/2018**
 
 The goal of this assignment is to start working with Handlebars and Express.  The code that's currently in this repo implements a site that's served completely statically.  Specifically, there is a directory `public/` that contains a number of static files that are served by a simple Express server in `server.js`.  Your job in this assignment is to templatize this existing site.  Specifically, you must complete the following tasks:
@@ -89,3 +90,9 @@ The assignment is worth 100 points total:
   * 10 points: the site is fully templatized, i.e. no HTML code is duplicated; re-used components of the site are written in partials, and the HTML skeleton common to every page is written in a layout
 
   * 10 points: the same template is used to render both the page displaying all twits (i.e. `/`) and the page displaying a single twit (i.e. `/twits/<n>`)
+=======
+Group member :
+ Aikebaier Aierken
+ 
+ Haolin Liu
+>>>>>>> 150e72e41302a99e8c41ae082a8d9ee655a35a2a

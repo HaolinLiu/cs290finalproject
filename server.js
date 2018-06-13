@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Write your routing code in this file.  Make sure to add your name and
  * @oregonstate.edu email address below.
@@ -5,6 +6,10 @@
  * Name: Haolin Liu
  * Email: liuhaol@oregonstate.edu
  */
+=======
+/* Aikebaier Aierken 
+*/
+>>>>>>> 150e72e41302a99e8c41ae082a8d9ee655a35a2a
 
 var path = require('path');
 var express = require('express');
